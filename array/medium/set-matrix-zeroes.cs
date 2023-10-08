@@ -1,29 +1,28 @@
 public class Solution {
     public void SetZeroes(int[][] matrix) {
-          var fczero = false;
-    var frzero = false;
-     int row = matrix.Length; 
+        var fczero = false;
+        var frzero = false;
+        int row = matrix.Length; 
         int column = matrix[0].Length;
+    //check if first row is zero
         for (int j = 0; j < column; j++)
-    {
-        if (matrix[0][j] == 0)
         {
-             Console.WriteLine(0+" "+ j);
-            frzero = true;
-            break;
+            if (matrix[0][j] == 0)
+            {
+                frzero = true;
+                break;
+            }
         }
-    }
 
-    // Check if the first column should be zeroed
-    for (int i = 0; i < row; i++)
-    {
-        if (matrix[i][0] == 0)
+        // Check if the first column should be zeroed
+        for (int i = 0; i < row; i++)
         {
-             Console.WriteLine(i+" "+ "0");
-            fczero = true;
-            break;
+            if (matrix[i][0] == 0)
+            {
+                fczero = true;
+                break;
+            }
         }
-    }
         applyInfo(matrix);
         applyZero(matrix, fczero,frzero);
         
